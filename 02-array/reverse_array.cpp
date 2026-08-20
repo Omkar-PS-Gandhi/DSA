@@ -1,18 +1,27 @@
+//This ia two pointer approach.
 #include <iostream>
 using namespace std;
 
-int main(){
-    int start, end, swap;
-    int arr[]={2,5,3,6,2,4};
-    int size = 5;
-
-    for(int i=0; i<size; i++){
-        int start=arr[i];
-        int end=arr[size-i];
-
-        start = 
+void reverseArray(int arr[], int size){
+    int start=0, end=size-1;
+    while(start < end){
+        int swap=arr[start];
+        arr[start] = arr[end];
+        arr[end] = swap;
+        // swap(arr[start],arr[end]);
+        start++;
+        end--;
     }
-    
-    return 0;
+}
 
+int main(){
+    int arr[]={12,2,13,20,21};
+    int size=sizeof(arr)/sizeof(int);
+    
+    reverseArray(arr, size);
+    for(int i=0; i<size; i++){
+        cout<< arr[i] <<" ";
+    }
+    cout <<endl;
+    return 0;
 }
